@@ -1,0 +1,35 @@
+{
+  "name": "injective-sdk-ts-example",
+  "version": "0.0.1",
+  "private": true,
+  "description": "An example repository based on TypeScript SDK on interacting with our chain.",
+  "author": "Bojan Angjelkoski <bojan@injectivelabs.org>",
+  "repository": "https://github.com/InjectiveLabs/injective-sdk-ts-example",
+  "license": "Apache-2.0",
+  "keywords": [
+    "typescript"
+  ],
+  "scripts": {},
+  "dependencies": {
+    "@injectivelabs/indexer-api": "^1.9.3",
+    "@injectivelabs/networks": "^1.10.8",
+    "@injectivelabs/sdk-ts": "^1.10.60",
+    "@injectivelabs/ts-types": "^1.10.5",
+    "@injectivelabs/utils": "^1.10.6",
+    "@injectivelabs/wallet-ts": "^1.10.65",
+    "dotenv": "^16.0.3",
+    "js-base64": "^3.7.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.10.3",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "eslint": "^7.32.0",
+    "jest": "^27.2.4",
+    "nodemon": "^2.0.13",
+    "ts-jest": "^27.0.5",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3"
+  }
+}
