@@ -11,12 +11,11 @@
   ],
   "scripts": {},
   "dependencies": {
-    "@injectivelabs/indexer-api": "^1.9.3",
-    "@injectivelabs/networks": "^1.10.8",
-    "@injectivelabs/sdk-ts": "^1.10.60",
-    "@injectivelabs/ts-types": "^1.10.5",
-    "@injectivelabs/utils": "^1.10.6",
-    "@injectivelabs/wallet-ts": "^1.10.65",
+    "@injectivelabs/networks": "next",
+    "@injectivelabs/sdk-ts": "next",
+    "@injectivelabs/ts-types": "next",
+    "@injectivelabs/utils": "next",
+    "@injectivelabs/wallet-ts": "next",
     "dotenv": "^16.0.3",
     "js-base64": "^3.7.2"
   },
