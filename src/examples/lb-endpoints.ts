@@ -1,3 +1,4 @@
+import { config } from "dotenv";
 import { getNetworkInfo, Network } from "@injectivelabs/networks";
 import {
   TxClient,
@@ -8,6 +9,8 @@ import {
 } from "@injectivelabs/sdk-ts";
 import { MsgSend } from "@injectivelabs/sdk-ts";
 import { BigNumberInBase, DEFAULT_STD_FEE } from "@injectivelabs/utils";
+
+config();
 
 /** MsgSend Example */
 (async () => {
