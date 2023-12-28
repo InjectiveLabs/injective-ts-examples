@@ -16,15 +16,21 @@ $ cd injective-ts-example
 $ yarn
 ```
 
+2. Fill in the details in an .env (if you are using this to send transactions)
 
-2. Execute an example (optional)
+```bash
+## make .env file
+## PRIVATE_KEY=YOUR_HEX_PRIVATE_KEY
+```
+
+3. Execute an example (optional)
 
 ```bash
 yarn ts-node pathToExample
 
-## Example: yarn ts-node ./src/examples/example.ts
+## Example: yarn ts-node ./src/transaction.ts
 ```
- 
+
 ## 📖 Documentation
 
 ---
