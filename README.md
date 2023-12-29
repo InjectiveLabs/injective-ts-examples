@@ -11,9 +11,9 @@ An example repository based on TypeScript on interacting with our chain using th
 1. Clone the repository
 
 ```bash
-$ git clone git@github.com:InjectiveLabs/injective-ts-example.git
-$ cd injective-ts-example
-$ yarn
+git clone git@github.com:InjectiveLabs/injective-ts-example.git
+cd injective-ts-example
+yarn
 ```
 
 2. Fill in the details in an .env (if you are using this to send transactions)
