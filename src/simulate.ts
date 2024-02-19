@@ -24,13 +24,14 @@ config();
     srcInjectiveAddress: injectiveAddress,
     dstInjectiveAddress: injectiveAddress,
   });
+
   const msgBroadcaster = new MsgBroadcasterWithPk({
     network: Network.Testnet,
     privateKey: privateKeyHash,
   });
 
   /** Prepare the Transaction **/
-  const response = await msgBroadcaster.broadcast({ msgs: msg });
+  const response = await msgBroadcaster.simulate({ msgs: msg });
 
-  console.log(response);
+  console.log(response.gasInfo);
 })();
