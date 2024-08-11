@@ -72,7 +72,7 @@ config();
 
       const response = await client.abciQuery({
         path: "/injective.exchange.v1beta1.Query/AggregateVolumes",
-        height: height,
+        height: i,
         data: Buffer.from(data),
       });
 
