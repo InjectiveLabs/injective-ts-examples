@@ -72,11 +72,15 @@ config();
 
       const response = await client.abciQuery({
         path: "/injective.exchange.v1beta1.Query/AggregateVolumes",
-        height: i,
+        height: 0,
         data: Buffer.from(data),
       });
 
-      console.log(response.value);
+      console.log(
+        InjectiveExchangeV1Beta1Query.QueryAggregateVolumesResponse.decode(
+          response.value
+        )
+      );
       await sleep(500);
     }
   } catch (e) {
