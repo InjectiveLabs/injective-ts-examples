@@ -13,12 +13,14 @@ config();
   const tmClient2 = await Tendermint37Client.connect(
     "http://15.204.206.103:26657"
   );
+  const heightEnd = 81_632_475
+  const heightStart = 77_230_037;
   const client1MaxHeight = 79_487_655;
-  const height = 77_230_037;
 
   try {
-    for (let i = 77_230_037; i < client1MaxHeight; i++) {
-      const client = client1MaxHeight > height ? tmClient2 : tmClient1;
+    for (let i = heightStart; i < heightEnd; i++) {
+      console.log('Querying for height:', i);
+      const client = client1MaxHeight > i ? tmClient2 : tmClient1;
 
       const data =
         InjectiveExchangeV1Beta1Query.QueryAggregateVolumesRequest.encode({
