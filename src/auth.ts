@@ -1,26 +1,25 @@
 import { config } from "dotenv";
-import { ChainGrpcAuthApi, PublicKey } from "@injectivelabs/sdk-ts";
-import { getNetworkEndpoints, Network } from "@injectivelabs/networks";
+import { ChainRestAuthApi, PublicKey } from "@injectivelabs/sdk-ts";
 
 config();
 
 (async () => {
-  const endpoints = getNetworkEndpoints(Network.MainnetSentry);
-  const chainGrpcAuthApi = new ChainGrpcAuthApi(endpoints.grpc);
+  const chainApi = new ChainRestAuthApi(
+    "https://rest.cosmos.directory/cosmoshub"
+  );
 
-  const injectiveAddress = "inj...";
-  const account = await chainGrpcAuthApi.fetchAccount(injectiveAddress);
-  const hex = Buffer.from(
-    account.baseAccount.pubKey?.key || "",
-    "base64"
-  ).toString("hex");
-  const base64 = account.baseAccount.pubKey?.key || "";
+  const cosmosAddress = "cosmos1l0znsvddllw9knha3yx2svnlxny676d8ns7uys";
+  const account = await chainApi.fetchCosmosAccount(cosmosAddress);
 
-  console.log({ base64 });
+  if (!account.pub_key?.key) {
+    console.log("No public key found");
+    return;
+  }
 
-  console.log({
-    hex,
-    base64,
-    pubBech32: PublicKey.fromBase64(base64).toBech32(),
-  });
+  console.log(
+    "injectiveAddress",
+    PublicKey.fromBase64(account.pub_key.key || "")
+      .toAddress()
+      .toBech32()
+  );
 })();

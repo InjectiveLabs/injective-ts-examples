@@ -1,29 +1,42 @@
 import { config } from "dotenv";
-import {
-  ChainGrpcBankApi,
-  IndexerGrpcAccountPortfolioApi,
-} from "@injectivelabs/sdk-ts";
+import { IndexerGrpcSpotApi } from "@injectivelabs/sdk-ts";
 import { getNetworkEndpoints, Network } from "@injectivelabs/networks";
+import { readFile } from "fs/promises";
 
 config();
 
 /** Querying Example */
 (async () => {
   const endpoints = getNetworkEndpoints(Network.Testnet);
-  const chainGrpcBankApi = new ChainGrpcBankApi(endpoints.grpc);
-  const indexerGrpcAccountPortfolioApi = new IndexerGrpcAccountPortfolioApi(
-    endpoints.indexer
-  );
+  const indexerGrpcSpotApi = new IndexerGrpcSpotApi(endpoints.indexer);
 
-  const injectiveAddress = "inj...";
-  const bankBalances = chainGrpcBankApi.fetchBalances(injectiveAddress);
+  const markets = await indexerGrpcSpotApi.fetchMarkets();
 
-  console.log(bankBalances);
+  console.log(markets);
 
-  const portfolio =
-    await indexerGrpcAccountPortfolioApi.fetchAccountPortfolioBalances(
-      injectiveAddress
+  const metadata = JSON.parse(await readFile("./mainnet.json", "utf8")) as {
+    denom: string;
+    address: string;
+    decimals: string;
+    logo: string;
+    name: string;
+    tokenType: string;
+    coinGeckoId: string;
+  }[];
+  const marketsWithMetadata = markets.map((market) => {
+    const baseTokenMetadata = metadata.find(
+      (m) => m.denom === market.baseDenom
+    );
+    const quoteTokenMetadata = metadata.find(
+      (m) => m.denom === market.quoteDenom
     );
 
-  console.log(portfolio);
+    return {
+      ...market,
+      baseTokenMetadata,
+      quoteTokenMetadata,
+    };
+  });
+
+  console.log(marketsWithMetadata);
 })();
