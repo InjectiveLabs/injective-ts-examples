@@ -19,6 +19,7 @@
     "@injectivelabs/sdk-ts": "1.14.34-beta.19",
     "@injectivelabs/ts-types": "1.14.33",
     "@injectivelabs/utils": "1.14.33",
+    "@injectivelabs/wallet-ts": "^1.14.34-beta.22",
     "dotenv": "^16.0.3",
     "global": "^4.4.0",
     "js-base64": "^3.7.2"
@@ -33,6 +34,7 @@
     "nodemon": "^2.0.13",
     "ts-jest": "^27.0.5",
     "ts-node": "^10.2.1",
+    "tsx": "^4.19.2",
     "typescript": "^4.4.3"
   }
 }
