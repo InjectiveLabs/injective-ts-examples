@@ -29,6 +29,9 @@ Add one `.ts` file under `src/examples/<category>/`.
 The runner auto-discovers examples from `src/examples`, so do not manually add
 new examples to a central list.
 
+Do not add individual examples to the main `README.md`. Keep example-specific
+documentation beside the example or in generated runner output.
+
 Each example file must export:
 
 - `metadata`: lightweight example metadata.
