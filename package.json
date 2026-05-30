@@ -1,38 +1,46 @@
 {
-  "name": "injective-sdk-ts-example",
+  "name": "injective-ts-examples",
   "version": "0.0.1",
   "private": true,
-  "description": "An example repository based on TypeScript SDK on interacting with our chain.",
+  "description": "TypeScript examples for verifying Injective SDK behavior and endpoint responses.",
   "author": "Bojan Angjelkoski <bojan@injectivelabs.org>",
-  "repository": "https://github.com/InjectiveLabs/injective-sdk-ts-example",
+  "repository": "https://github.com/InjectiveLabs/injective-ts-examples",
   "license": "Apache-2.0",
+  "packageManager": "pnpm@10.7.0",
   "keywords": [
     "typescript"
   ],
-  "scripts": {},
+  "scripts": {
+    "example": "tsx src/runner.ts",
+    "example:list": "tsx src/runner.ts list",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "check": "pnpm lint && pnpm typecheck && pnpm test",
+    "postinstall": "pnpm deps:injective:update",
+    "deps:injective:update": "pnpm update \"@injectivelabs/*\" --latest"
+  },
   "dependencies": {
     "@cosmjs/proto-signing": "^0.31.0",
     "@cosmjs/stargate": "^0.31.0",
     "@cosmjs/tendermint-rpc": "^0.32.4",
-    "@injectivelabs/exceptions": "1.14.33",
-    "@injectivelabs/networks": "1.14.33",
-    "@injectivelabs/sdk-ts": "1.14.34-beta.19",
-    "@injectivelabs/ts-types": "1.14.33",
-    "@injectivelabs/utils": "1.14.33",
+    "@injectivelabs/core-proto-ts": "1.16.6",
+    "@injectivelabs/exceptions": "1.19.26",
+    "@injectivelabs/networks": "1.19.26",
+    "@injectivelabs/sdk-ts": "1.19.26",
+    "@injectivelabs/ts-types": "1.19.26",
+    "@injectivelabs/utils": "1.19.26",
     "dotenv": "^16.0.3",
     "global": "^4.4.0",
     "js-base64": "^3.7.2"
   },
   "devDependencies": {
-    "@types/jest": "^27.0.2",
-    "@types/node": "^16.10.3",
-    "@typescript-eslint/eslint-plugin": "^4.33.0",
-    "@typescript-eslint/parser": "^4.33.0",
-    "eslint": "^7.32.0",
-    "jest": "^27.2.4",
-    "nodemon": "^2.0.13",
-    "ts-jest": "^27.0.5",
-    "ts-node": "^10.2.1",
-    "typescript": "^4.4.3"
+    "@types/node": "^24.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^8.57.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.8.0",
+    "vitest": "^3.2.0"
   }
 }
