@@ -80,10 +80,12 @@ Common environment variables:
 
 - `INJECTIVE_NETWORK`: network name accepted by `@injectivelabs/networks`.
 - `INJECTIVE_RPC_ENDPOINT`: overrides the RPC endpoint for RPC/CosmJS examples.
-- `PRIVATE_KEY`: hex private key for transaction examples.
-- `SEED_PHRASE`: mnemonic used by the authz grantee example.
-- `DESTINATION_INJECTIVE_ADDRESS`: optional recipient override.
-- `SEND_AMOUNT_INJ`: optional amount override for send examples.
+- `PRIVATE_KEY`: shared hex private key for transaction examples.
+- `SEED_PHRASE`: shared mnemonic used by examples that accept mnemonic signing.
+- `DESTINATION_INJECTIVE_ADDRESS`: recipient address for send examples. Some
+  examples default to the source account when unset.
+- `SEND_AMOUNT_INJ`: optional amount override for examples that send a fixed
+  amount.
 - `BROADCAST_TRANSACTIONS`: must be `true` before any broadcast-capable example
   sends a transaction.
 
