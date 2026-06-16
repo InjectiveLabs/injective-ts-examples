@@ -10,3 +10,4 @@
 coverage
 *.log
 .env
+/data/authz-rfq-*.json

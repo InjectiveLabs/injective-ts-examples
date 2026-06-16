@@ -77,6 +77,10 @@ runDirectly(module, run);
   example-specific variable into it unless the variable is broadly reused.
 - For private-key or transaction examples, default to simulation or no-op
   behavior. Require `BROADCAST_TRANSACTIONS=true` before broadcasting.
+- Errors must be easy to trace. Do not collapse unexpected failures to only
+  `String(error)` or `error.message`; preserve stack traces and original causes.
+  When adding context, use `new Error("context", { cause: error })` or rethrow
+  the original error so `runDirectly` can print the stack and structured details.
 - Do not make live network calls from tests. Test the runner, registry,
   metadata, parsing, and env handling without touching endpoints.
 
