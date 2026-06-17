@@ -25,11 +25,11 @@
     "@cosmjs/stargate": "^0.31.0",
     "@cosmjs/tendermint-rpc": "^0.32.4",
     "@injectivelabs/core-proto-ts": "1.16.6",
-    "@injectivelabs/exceptions": "1.20.11",
-    "@injectivelabs/networks": "1.20.11",
-    "@injectivelabs/sdk-ts": "1.20.11",
-    "@injectivelabs/ts-types": "1.20.11",
-    "@injectivelabs/utils": "1.20.11",
+    "@injectivelabs/exceptions": "1.20.13",
+    "@injectivelabs/networks": "1.20.13",
+    "@injectivelabs/sdk-ts": "link:../../../Library/pnpm/global/5/node_modules/@injectivelabs/sdk-ts",
+    "@injectivelabs/ts-types": "1.20.13",
+    "@injectivelabs/utils": "1.20.13",
     "@injectivelabs/wallet-base": "link:../../../Library/pnpm/global/5/node_modules/@injectivelabs/wallet-base",
     "@injectivelabs/wallet-core": "link:../../../Library/pnpm/global/5/node_modules/@injectivelabs/wallet-core",
     "@injectivelabs/wallet-private-key": "link:../../../Library/pnpm/global/5/node_modules/@injectivelabs/wallet-private-key",
@@ -52,7 +52,8 @@
       "@injectivelabs/wallet-core": "link:../../../Library/pnpm/global/5/node_modules/@injectivelabs/wallet-core",
       "@injectivelabs/wallet-private-key": "link:../../../Library/pnpm/global/5/node_modules/@injectivelabs/wallet-private-key",
       "@injectivelabs/wallet-strategy": "link:../../../Library/pnpm/global/5/node_modules/@injectivelabs/wallet-strategy",
-      "@injectivelabs/wallet-base": "link:../../../Library/pnpm/global/5/node_modules/@injectivelabs/wallet-base"
+      "@injectivelabs/wallet-base": "link:../../../Library/pnpm/global/5/node_modules/@injectivelabs/wallet-base",
+      "@injectivelabs/sdk-ts": "link:../../../Library/pnpm/global/5/node_modules/@injectivelabs/sdk-ts"
     }
   }
 }
