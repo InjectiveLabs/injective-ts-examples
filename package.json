@@ -25,15 +25,15 @@
     "@cosmjs/stargate": "^0.31.0",
     "@cosmjs/tendermint-rpc": "^0.32.4",
     "@injectivelabs/core-proto-ts": "1.16.6",
-    "@injectivelabs/exceptions": "1.20.13",
-    "@injectivelabs/networks": "1.20.13",
-    "@injectivelabs/sdk-ts": "link:../../../Library/pnpm/global/5/node_modules/@injectivelabs/sdk-ts",
-    "@injectivelabs/ts-types": "1.20.13",
-    "@injectivelabs/utils": "1.20.13",
-    "@injectivelabs/wallet-base": "link:../../../Library/pnpm/global/5/node_modules/@injectivelabs/wallet-base",
-    "@injectivelabs/wallet-core": "link:../../../Library/pnpm/global/5/node_modules/@injectivelabs/wallet-core",
-    "@injectivelabs/wallet-private-key": "link:../../../Library/pnpm/global/5/node_modules/@injectivelabs/wallet-private-key",
-    "@injectivelabs/wallet-strategy": "link:../../../Library/pnpm/global/5/node_modules/@injectivelabs/wallet-strategy",
+    "@injectivelabs/exceptions": "1.20.18",
+    "@injectivelabs/networks": "1.20.18",
+    "@injectivelabs/sdk-ts": "1.20.18",
+    "@injectivelabs/ts-types": "1.20.18",
+    "@injectivelabs/utils": "1.20.18",
+    "@injectivelabs/wallet-base": "1.20.18",
+    "@injectivelabs/wallet-core": "1.20.18",
+    "@injectivelabs/wallet-private-key": "1.20.18",
+    "@injectivelabs/wallet-strategy": "1.20.18",
     "dotenv": "^16.0.3",
     "global": "^4.4.0",
     "js-base64": "^3.7.2"
@@ -46,14 +46,5 @@
     "tsx": "^4.20.0",
     "typescript": "^5.8.0",
     "vitest": "^3.2.0"
-  },
-  "pnpm": {
-    "overrides": {
-      "@injectivelabs/wallet-core": "link:../../../Library/pnpm/global/5/node_modules/@injectivelabs/wallet-core",
-      "@injectivelabs/wallet-private-key": "link:../../../Library/pnpm/global/5/node_modules/@injectivelabs/wallet-private-key",
-      "@injectivelabs/wallet-strategy": "link:../../../Library/pnpm/global/5/node_modules/@injectivelabs/wallet-strategy",
-      "@injectivelabs/wallet-base": "link:../../../Library/pnpm/global/5/node_modules/@injectivelabs/wallet-base",
-      "@injectivelabs/sdk-ts": "link:../../../Library/pnpm/global/5/node_modules/@injectivelabs/sdk-ts"
-    }
   }
 }
