@@ -332,7 +332,7 @@ export const run = async (): Promise<void> => {
     MsgSend,
     PrivateKey,
   } = await import("@injectivelabs/sdk-ts");
-  const { Wallet } = await import("@injectivelabs/wallet-base/light");
+  const { Wallet } = await import("@injectivelabs/wallet-base");
   const { BaseWalletStrategy, MsgBroadcaster } =
     await import("@injectivelabs/wallet-core");
   const { PrivateKeyCosmosWalletStrategy } =

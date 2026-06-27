@@ -1,8 +1,8 @@
 import type {
   DerivativeMarket,
+  IndexerGrpcOracleApi as IndexerGrpcOracleApiType,
   OraclePriceV2,
   OraclePriceV2Filter,
-  PriceResponse,
   WsPriceOracleMarketPrice,
 } from "@injectivelabs/sdk-ts";
 import type { ExampleMetadata } from "../types";
@@ -29,11 +29,15 @@ export const metadata: ExampleMetadata = {
   requiresEnvironment: ["WS_PRICE_ORACLE_API_KEY"],
 };
 
-interface MarketWithOraclePair extends DerivativeMarket {
+type MarketWithOraclePair = DerivativeMarket & {
   readonly oracleBase: string;
   readonly oracleQuote: string;
   readonly oracleScaleFactor: number;
-}
+};
+
+type OraclePriceResponse = Awaited<
+  ReturnType<IndexerGrpcOracleApiType["fetchOraclePrice"]>
+>;
 
 interface TrackedMarket {
   readonly market: MarketWithOraclePair;
@@ -74,7 +78,7 @@ interface SampleRecord {
     readonly priceDecimals: number;
   };
   readonly markPriceV1: PriceSnapshot & {
-    readonly response?: PriceResponse;
+    readonly response?: OraclePriceResponse;
   };
   readonly markPriceV2: PriceSnapshot & {
     readonly response?: OraclePriceV2;
